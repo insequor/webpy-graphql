@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/Igor-britecore/webpy-graphql.svg?branch=master)](https://travis-ci.org/Igor-britecore/webpy-graphql) [![Coverage Status](https://coveralls.io/repos/github/Igor-britecore/webpy-graphql/badge.svg?branch=master)](https://coveralls.io/github/Igor-britecore/webpy-graphql?branch=master) [![PyPI version](https://badge.fury.io/py/WebPy-GraphQL.svg)](https://badge.fury.io/py/WebPy-GraphQL)
 
 Adds GraphQL support to your WebPy application.
+This version is the one from the [original repository|https://github.com/ig-ksv/webpy-graphql] and I believe it was supporting only Python 2. Follow the main branch to use it with Python 3.
 
 ## Usage
 
