@@ -3,13 +3,13 @@ import web
 import six
 import re
 import os
-import urlparse
+import urllib.parse as urlparse
 
 
 from werkzeug.exceptions import BadRequest, MethodNotAllowed
-from urllib import unquote
-from utils import props
-from init_subclass_meta import InitSubclassMeta
+from urllib.parse import unquote
+from .utils import props
+from .init_subclass_meta import InitSubclassMeta
 
 from graphql import Source, execute, parse, validate
 from graphql.error import format_error as format_graphql_error
@@ -59,7 +59,7 @@ class GraphQLView:
 
     def __init__(self, *args, **kwargs):
         if hasattr(self, 'GraphQLMeta'):
-            for key, value in props(self.GraphQLMeta).iteritems():
+            for key, value in props(self.GraphQLMeta).items():
                 setattr(self, key, value)
 
         assert not all((self.graphiql, self.batch)), 'Use either graphiql or batch processing'
@@ -80,7 +80,7 @@ class GraphQLView:
         return self.executor
 
     def render_graphiql(self, **kwargs):
-        for key, value in kwargs.iteritems():
+        for key, value in kwargs.items():
             kwargs[key] = json.dumps(kwargs.get(key, None))
 
         render = web.template.render(DIR_PATH)
@@ -259,7 +259,7 @@ class GraphQLView:
 
     @classmethod
     def can_display_graphiql(cls, data):
-        raw = 'raw' in web.input() or 'raw' in web.data()
+        raw = b'raw' in web.input() or b'raw' in web.data()
         return not raw and cls.request_wants_html()
 
     @classmethod

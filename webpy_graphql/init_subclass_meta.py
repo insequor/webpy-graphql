@@ -1,4 +1,4 @@
-from utils import props
+from .utils import props
 from inspect import isclass
 
 class InitSubclassMeta(type):

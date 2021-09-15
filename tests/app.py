@@ -11,7 +11,7 @@ class index(GraphQLView):
         schema=Schema
 
 def create_app(**kwargs):
-    for key, value in kwargs.iteritems():
+    for key, value in kwargs.items():
         setattr(index.GraphQLMeta, key, value)
     urls = ('/graphql', 'index')
     return web.application(urls, globals())

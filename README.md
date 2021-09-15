@@ -4,6 +4,7 @@
 
 Adds GraphQL support to your WebPy application.
 
+This version is forked from the [original repository](https://github.com/ig-ksv/webpy-graphql) in order to make the changes to support Python 3 in my project. Python 3 support is not fully tested, I only made the changes which was required for my project.
 ## Usage
 
 Just use the `GraphQLView` view from `webpy_graphql`
